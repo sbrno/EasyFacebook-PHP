@@ -7,7 +7,7 @@
  * 
  * @author     Sandor Huszagh
  * @copyright  (c) 2011 - Sandor Huszagh
- * @version    1.1
+ * @version    1.2
  * @license http://opensource.org/licenses/gpl-3.0.html GNU General Public License v3
  */
  
@@ -269,9 +269,9 @@ class EasyFacebook {
 		}
 		
 		while (false !== ($filename = readdir($dh))) {
-			$files[] = $filename;
+			if (strpos($filename, "jpg")) $files[] = $filename;
 		}
-		$i = rand(2,count($files)-1);
+		$i = rand(0,count($files)-1);
 		return $imgDir."/".$files[$i];
 	}
 
